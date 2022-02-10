@@ -10,7 +10,6 @@ depositBtn.addEventListener("click", function () {
   const totalDeposit = depositValue + parseFloat(depositUpdate.innerText);
   //   set total value as innertext
   depositUpdate.innerText = totalDeposit;
-  depositAmount.value = "";
 
   //   update total balance
   const totalBalance = document.getElementById("total-balance");
@@ -19,4 +18,29 @@ depositBtn.addEventListener("click", function () {
 
   //   clear text field
   depositAmount.value = "";
+});
+
+// withdraw handle
+const withdrawBtn = document.getElementById("withdraw-btn");
+withdrawBtn.addEventListener("click", function () {
+  // wirhdraw amount
+  const wAmount = document.getElementById("withdraw-amount");
+  const wAmountValue = parseFloat(wAmount.value);
+
+  //  previous value
+  const pWithdraw = document.getElementById("withdraw-update");
+
+  // add
+  const totalWithdraw = wAmountValue + parseFloat(pWithdraw.innerText);
+  pWithdraw.innerText = totalWithdraw;
+
+  //   update total balance
+  const tBalance = document.getElementById("total-balance");
+  const nBalance = parseFloat(tBalance.innerText) - wAmountValue;
+  tBalance.innerText = nBalance;
+  //   clear input
+  wAmount.value = "";
+  //
+
+  console.log(pWithdraw.innerText);
 });
