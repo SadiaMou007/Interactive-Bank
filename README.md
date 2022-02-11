@@ -1,2 +1,3 @@
 # Interactive-Bank 
 
+Tailwind, JavaScript
